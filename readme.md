@@ -17,7 +17,7 @@ aws cloudformation deploy \
 ### Create docker image
 
 ```md
-docker build -t nginx-www /aws/dockerFile
+docker build -t nginx-www aws/dockerFile 
 ```
 
 ### Docker login ECR
@@ -34,4 +34,10 @@ docker tag nginx-www:latest aws_account_id.dkr.ecr.region.amazonaws.com/softserv
 
 ```md
 docker push aws_account_id.dkr.ecr.region.amazonaws.com/softserve-nginx
+```
+
+### Check if working
+
+```md
+docker run -it --rm -d -p 8080:80 --name web aws_account_id.dkr.ecr.region.amazonaws.com/softserve-nginx
 ```

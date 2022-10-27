@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: 'This template will deploy a sample ECR'
+Parameters:
+  ECRName:
+    Type: String
+    Description: 'Elastic container registry name'
+    Default: 'softserve-nginx'
+
+Resources:
+  Repository:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: !Ref ECRName
+
+Outputs:
+  RepositoryName:
+    Description: Image Builder Pipeline Arn
+    Value: !Ref Repository

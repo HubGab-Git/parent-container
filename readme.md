@@ -10,7 +10,7 @@ Tutorial to create AWS ECR repository, create docker image with custom nginx sit
 
 ```md
 aws cloudformation deploy \
---template /aws/cloudFormation/ecr.yaml \
+--template aws/cloudFormation/ecr.yaml \
 --stack-name nginx-www
 ```
 
